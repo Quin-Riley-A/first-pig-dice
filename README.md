@@ -1,3 +1,5 @@
+TESTING
+
 Objects:
 Die
   Roll (prototype method)
@@ -19,3 +21,12 @@ Score Object
     Check for One (proto method)
 
 
+TDD:
+Describe: diceRoll()
+**It will generate a random integer from 1 to 6 inclusive.**
+Code:
+```javascript
+diceRoll();
+```
+Expected Output:
+2 (or) 5 (or) 3 etc
