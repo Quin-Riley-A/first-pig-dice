@@ -24,7 +24,7 @@ Score Object
 
 TDD:
 Describe: diceRoll()
-Test 2:
+Test 1:
 **It will generate a random integer from 1 to 6 inclusive.**
 Code:
 ```javascript
@@ -41,3 +41,22 @@ Code:
 roundScore(5);
 ```
 Expected Output: [value1, value2, value3, value4, value5]
+
+Test 2:
+**When a one is rolled, it will return a zero**
+Code:
+'''javascript
+roundscore(7);
+'''
+Expected Output A: [0]
+Expected Output B: [List of 7 values that all are not 0 or 1]
+
+
+
+Next, build a game scoring portion
+
+Key-values: 
+  Current Round = (some positive integer)
+  Total Score
+  Can invoke the roundscore method to roll x number of dice
+  array of all previous round scores (optional)
