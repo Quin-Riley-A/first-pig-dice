@@ -5,26 +5,30 @@ function Game() {
   
 }
 
-function Round() {
-
-}
-
 function Player(name, playerNumber) {
   this.playerName = name;
   this.playerNumber = playerNumber;
-  this.hasDice = false;
-  
+  this.turn = false;
+  this.currentScore = 0;
 }
 
-function diceRoll() {
+Player.prototype.diceRoll = function() {
   return Math.floor(Math.random() * 6 + 1);
-}
+};
 
-function roundScore(numberOfRolls) {
+/*Player.prototype.whoseTurn = function() {
+  if (this.turn) {
+    //player one turn
+  } else {
+    //player two turn
+  }
+};*/
+
+function roundScore(numberOfRolls, currentScore) {
   let rollArr = [];
   for (let n = 0; n < numberOfRolls; n++) {
-    let newRoll = diceRoll();
-    if (newRoll === 1) {
+    currentScore.diceRoll();
+    if (currentScore === 1) {
       return 0;
     } else {
     rollArr.push(newRoll);
@@ -32,3 +36,20 @@ function roundScore(numberOfRolls) {
   }; 
   return rollArr;
 } 
+
+/*
+bool = turn
+false = p2
+true = p1
+*/
+
+//UI Logic zone
+
+let joe = new Player("Joe", 1);
+
+const runapp = () => {
+  const rollBtn = document.getElementById('btn');
+  rollBtn.addEventListener('click', roundScore(1, joe.currentScore));
+}
+
+window.addEventListener("load", runapp);

@@ -60,3 +60,24 @@ Key-values:
   Total Score
   Can invoke the roundscore method to roll x number of dice
   array of all previous round scores (optional)
+
+========================================
+function Player(name, playerNumber) {
+  this.playerName = name;
+  this.playerNumber = playerNumber;
+  this.turn = false;
+	this.currentScore=0
+}
+
+function roundScore(numberOfRolls, currentScore) {
+  let rollArr = [];
+  for (let n = 0; n < numberOfRolls; n++) {
+    Joe.currentScore.diceRoll();
+    if currentScore === 1) {
+      return 0;
+    } else {
+    rollArr.push(newRoll);
+    }
+  }; 
+  return rollArr;
+} 
