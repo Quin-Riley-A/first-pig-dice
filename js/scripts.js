@@ -24,11 +24,11 @@ Player.prototype.diceRoll = function() {
   }
 };*/
 
-function roundScore(numberOfRolls, currentScore) {
+function roundScore(numberOfRolls, player) {
   let rollArr = [];
   for (let n = 0; n < numberOfRolls; n++) {
-    currentScore.diceRoll();
-    if (currentScore === 1) {
+    let newRoll = player.diceRoll();
+    if (newRoll === 1) {
       return 0;
     } else {
     rollArr.push(newRoll);
@@ -49,7 +49,7 @@ let joe = new Player("Joe", 1);
 
 const runapp = () => {
   const rollBtn = document.getElementById('btn');
-  rollBtn.addEventListener('click', roundScore(1, joe.currentScore));
+  rollBtn.addEventListener('click', roundScore(1, joe));
 }
 
 window.addEventListener("load", runapp);
