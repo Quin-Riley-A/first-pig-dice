@@ -1,9 +1,10 @@
+// Business Logic
+
 function Game() {
   this.roundNumber = {};
   this.player1Score = 0;
   this.player2Score = 0;
-  
-}
+  }
 
 function Player(name, playerNumber) {
   this.playerName = name;
@@ -13,7 +14,11 @@ function Player(name, playerNumber) {
 }
 
 Player.prototype.diceRoll = function() {
-  return Math.floor(Math.random() * 6 + 1);
+  let rollResult = Math.floor(Math.random() * 6 + 1);
+  this.currentScore += rollResult;
+  console.log(this);
+  console.log(rollResult);
+  //return rollResult;
 };
 
 /*Player.prototype.whoseTurn = function() {
@@ -47,9 +52,16 @@ true = p1
 
 let joe = new Player("Joe", 1);
 
-const runapp = () => {
+
+function handleRoll (player) {
+  console.log(player);
+  player.diceRoll();
+}
+
+function runapp() {
   const rollBtn = document.getElementById('btn');
-  rollBtn.addEventListener('click', roundScore(1, joe));
+  const boundRoll = joe.diceRoll.bind(joe);
+  rollBtn.addEventListener('click', boundRoll);
 }
 
 window.addEventListener("load", runapp);

@@ -1,5 +1,11 @@
 TESTING
 
+If the game has an active player
+and if the active player points to a specific object for a player
+then we can run game.activeplayer.roll() to roll dice
+and game.hold() to switch the active player
+
+
 Objects:
 Die
   Roll (prototype method) 
