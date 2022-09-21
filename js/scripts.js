@@ -43,36 +43,20 @@ Player.prototype.diceRoll = function() {
   }
 };
 
-/*
-bool = turn
-false = p2
-true = p1
-*/
-
 //UI Logic zone
-
-//let joe = new Player("Joe", 1);
-
-
-function handleRoll (player) {
-  console.log(player);
-  player.diceRoll();
-}
 
 function runapp() {
   game.playerOne = new Player("Joe", 1);
   game.playerTwo = new Player("Bill", 2);
   game.switchTurn();
-  console.log(game.activePlayer);
   const rollBtn = document.getElementById('rollBtn');
   const holdBtn = document.getElementById('holdBtn');
-  const activePlayer = game.activePlayer;
-  const boundRoll = activePlayer.diceRoll.bind(activePlayer);
-  console.log("here I am")
-  const boundHold = game.switchTurn(); //.bind(game);
-  console.log("on the other side.");
-  rollBtn.addEventListener('click', boundRoll);
-  holdBtn.addEventListener('click', boundHold);
+  //const activePlayer = game.activePlayer;
+  //const boundRoll = activePlayer.diceRoll;
+  const boundHold = game.switchTurn; //.bind(game);
+  console.log(game.activePlayer)
+  rollBtn.addEventListener('click', game.activePlayer.diceRoll.bind(game.activePlayer));
+  holdBtn.addEventListener('click', boundHold.bind(game));
 }
 
 const game = new Game();
