@@ -4,11 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js" defer></script>
   <title>Pig Dice, Dice for Pigs</title>
 </head>
 <body>
+  <h1> Let's play Pig Dice! </h1>
+  <div class="container-fluid">
+    <div class="row" id="player-scores">
+      <div class="col-md-6">
+        <h5>Total Score: <span class="totalspan" id="total-score1"></span></h5>
+        <br>
+        <h5>Round Score: <span class="roundspan" id="round-score1"></span> </h5>
+      </div>
+      <div class="col-md-6">
+        <h5>Total Score: <span class="totalspan" id="total-score2"></span></h5>
+        <br>
+        <h5>Round Score: <span class="roundspan" id="round-score2"></span> </h5>
+      </div>
+    </div>
+  </div>
   <button type="button" class="btn" id="rollBtn">Roll Again?</button>
   <button type="button" class="btn" id="holdBtn">End Turn?</button>
 </body>

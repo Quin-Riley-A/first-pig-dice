@@ -57,7 +57,7 @@ function runapp() {
   console.log(game.activePlayer)
   rollBtn.addEventListener('click', game.activePlayer.diceRoll.bind(game.activePlayer));
   holdBtn.addEventListener('click', boundHold.bind(game));
-}
+};
 
 const game = new Game();
 window.addEventListener("load", runapp);

@@ -1,0 +1,20 @@
+.col-md-6 {
+  border: solid gray 10px;
+  border-radius: 25px;
+  color: green;
+}
+
+.btn {
+  border: solid green 4px;
+  border-radius: 15px;
+}
+.btn:hover {
+  box-shadow: 2px 2px 40px lightgreen;
+  background-color: grey;
+  color: white;
+}
+
+
+body {
+
+}
